@@ -1,7 +1,7 @@
 {
   "region": "us-east-1",
   "cognito": {
-    "poolId": "",
+    "poolId": "us-east-1:2f9f4c44-4d08-4a4e-9e00-c66035f76a21",
     "appUserPoolClientId": "",
     "appUserPoolName": "",
     "appDomainName": "",
@@ -10,7 +10,7 @@
     "appUserPoolIdentityProvider": ""
   },
   "lex": {
-    "botName": "",
+    "botName": "OrderFlowers",
     "botAlias": "$LATEST",
     "initialText": "",
     "initialSpeechInstruction": "",
@@ -18,7 +18,10 @@
     "region": "us-east-1"
   },
   "ui": {
-    "parentOrigin": "",
+    "parentOrigin": [
+      "http://localhost:8000",
+      "http://localhost:8001"
+    ],
     "toolbarTitle": "Order Config",
     "toolbarLogo": "",
     "positiveFeedbackIntent": "",

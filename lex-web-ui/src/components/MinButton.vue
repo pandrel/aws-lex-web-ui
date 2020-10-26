@@ -9,12 +9,18 @@
     >
       <span id="min-button-tooltip">{{minButtonToolTipContent}}</span>
     </v-tooltip> -->
+
+
+    <!-- // "parentOrigin": [
+    //   "http://localhost:8000",
+    //   "http://localhost:8001"
+    // ], -->
+
     <v-fab-transition>
       <v-btn
         bottom
         dark
         depressed
-        fab
         fixed
         right
         v-show="isUiMinimized"
@@ -24,7 +30,8 @@
         aria-label="show chat window"
         class="min-button"
       >
-        <v-icon>
+        Account Help   
+        <v-icon right>
           {{'chat'}}
         </v-icon>
       </v-btn>

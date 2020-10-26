@@ -58,6 +58,9 @@ export class IframeComponentLoader {
     }
     const iframeConfig = this.config.iframe;
     // assign the iframeOrigin if not found in config
+    /**
+     * todo: accept parent origin as a list
+     */
     if (!(('iframeOrigin' in iframeConfig) && iframeConfig.iframeOrigin)) {
       this.config.iframe.iframeOrigin =
         this.config.parentOrigin || window.location.origin;
@@ -102,7 +105,10 @@ export class IframeComponentLoader {
       console.error('missing iframeSrcPath config field');
       return false;
     }
-    if (!('parentOrigin' in config && config.parentOrigin)) {
+    /**
+     * todo: accept parent origin as a list
+     */
+    if (!('parentOrigin' in config && config.parentOrigin)) { 
       console.error('missing parentOrigin config field');
       return false;
     }
@@ -325,6 +331,10 @@ export class IframeComponentLoader {
         window.location.origin;
 
     // SECURITY: origin check
+    /**
+     * check evt.origin for list
+     * follow evt.origin back to see how it is set and used with another name
+     */
     if (evt.origin !== iframeOrigin) {
       console.warn('postMessage from invalid origin', evt.origin);
       return;

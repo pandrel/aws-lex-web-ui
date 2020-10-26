@@ -51,7 +51,8 @@ export const options = {
   // Controls if it should load minimized production dependecies
   // set to true for production
   // NODE_ENV is injected at build time by webpack DefinePlugin
-  shouldLoadMinDeps: (process.env.NODE_ENV === 'production'),
+  // shouldLoadMinDeps: (process.env.NODE_ENV === 'production'),
+  shouldLoadMinDeps: false
 };
 
 /**

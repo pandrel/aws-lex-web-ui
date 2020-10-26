@@ -855,10 +855,17 @@ export default {
       let target = context.state.config.ui.parentOrigin;
       if (target !== window.location.origin) {
         // simple check to determine if a region specific path has been provided
-        const p1 = context.state.config.ui.parentOrigin.split('.');
-        const p2 = window.location.origin.split('.');
-        if (p1[0] === p2[0]) {
-          target = window.location.origin;
+        if (context.state.config.ui.parentOrigin.length >= 1) {
+          target.forEach((value, index) => {
+            console.info(value, index);
+            const p1 = value.split('.');
+            const p2 = window.location.origin.split('.');
+            if (p1[0] === p2[0]) {
+              target = window.location.origin;
+              console.info(`target=${target}`);
+              context.commit('setParentOrigin', target);
+            }
+          });
         }
       }
       window.parent.postMessage(

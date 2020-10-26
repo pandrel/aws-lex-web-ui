@@ -381,4 +381,7 @@ export default {
   toggleBackProcessing(state) {
     state.isBackProcessing = !state.isBackProcessing;
   },
+  setParentOrigin(state, origin) {
+    state.config.ui.parentOrigin = origin;
+  },
 };

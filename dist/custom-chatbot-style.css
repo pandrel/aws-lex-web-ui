@@ -10,7 +10,9 @@
   font-size: 1.875em !important;
   color: #ffffff !important;
 }
-
+button.secondary--text.btn.btn--round.accent {
+    background-color: white !important;
+}
 .message-list-container {
   background-color: #dcdbdc !important
 }
