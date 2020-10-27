@@ -89,7 +89,7 @@ Parameters:
             and dash.
 
     WebAppParentOrigin:
-        Type: String
+        Type: CommaDelimitedList
         Description: >
             Browser origin (e.g. http://mysite.example.com:8080)
             of an existing site that is allowed to send/receive data
@@ -97,8 +97,8 @@ Parameters:
             optional parameter. If left empty, the sample parent page
             will be hosted in the same S3 bucket as the iframe
         Default: ''
-        AllowedPattern: '(^$|^https?://[\w\.-]+(:\d+)?$)'
-        ConstraintDescription: Empty or valid browser origin
+        # AllowedPattern: '(^$|^https?://[\w\.-]+(:\d+)?$)'
+        # ConstraintDescription: Empty or valid browser origin
 
     WebAppPath:
         Type: String
@@ -289,7 +289,7 @@ Metadata:
 Conditions:
     NeedsBot: !Equals [!Ref BotName, '']
     NeedsCognito: !Equals [!Ref CognitoIdentityPoolId, '']
-    NeedsParentOrigin: !Equals [!Ref WebAppParentOrigin, '']
+    NeedsParentOrigin: !Equals [!Select ["0", !Ref WebAppParentOrigin], '']
 
 Resources:
     Bot:
