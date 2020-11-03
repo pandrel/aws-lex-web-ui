@@ -102,8 +102,8 @@ Parameters:
             created to host a sample parent site embedding the webapp
             as an iframe.
         Default: ''
-        AllowedPattern: '(^$|^https?://[\w\.-]+(:\d+)?$)'
-        ConstraintDescription: Empty or valid browser origin
+        # AllowedPattern: '(^$|^https?://[\w\.-]+(:\d+)?$)'
+        # ConstraintDescription: Empty or valid browser origin
 
     WebAppPath:
         Type: String
