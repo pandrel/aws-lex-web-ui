@@ -853,10 +853,11 @@ export default {
         }
       };
       let target = context.state.config.ui.parentOrigin;
+      let targetArray = target.split(",");
       if (target !== window.location.origin) {
         // simple check to determine if a region specific path has been provided
-        if (context.state.config.ui.parentOrigin.length >= 1) {
-          target.forEach((value, index) => {
+        if (targetArray.length >= 1) {
+          targetArray.forEach((value, index) => {
             console.info(value, index);
             const p1 = value.split('.');
             const p2 = window.location.origin.split('.');
